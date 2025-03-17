@@ -1,3 +1,5 @@
-langchain
+langchain[openai]
+openai
+langgraph
 openai
 python-dotenv
