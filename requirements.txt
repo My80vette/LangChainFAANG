@@ -3,3 +3,4 @@ openai
 langgraph
 openai
 python-dotenv
+streamlit
