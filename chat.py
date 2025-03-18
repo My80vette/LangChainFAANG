@@ -123,13 +123,22 @@ def send_message():
         
         # Add user message to chat history
         st.session_state.chat_history.append({"role": "user", "content": user_message})
+
+        # Logic to send user query to trigger agent response
+
+        # Call agent response logic here, although code it in agent.py for contanierization
         
-        # Simulate assistant response (replace with actual logic later)
+        # Simulate assistant response this is where we will put the real logic to RETURN answers
         assistant_response = f"Hello! I received your message: '{user_message}'"
         st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
         
         # Clear the input field
         st.session_state.user_input = ""
+
+        # After that, we need to do whatever we are going to do to the study plan cards
+        # We want the agent to respond in various ways, either create cards when new tasks are added, 
+        # generate knowledge checks, when we attempt to move a card to the completed bin, etc.
+
 
 # Sidebar
 with st.sidebar:
