@@ -64,3 +64,32 @@ This section will be updated regularly to showcase the progress of the "Daily Gr
 * More advanced knowledge check generation and evaluation.
 * Potential for user-defined goals beyond the default curriculum.
 * Enhanced UI with progress visualizations.
+
+## UI Updates
+
+The UI has been redesigned from Streamlit to a custom Flask-based implementation with the following layout:
+
+- Left sidebar (15-25% of screen): Navigation menu for different sections of the app
+- Middle section (40-50% of screen): Chat interface with the learning assistant
+- Right section: Task cards with the top task displayed and others hidden behind a "View Other Tasks" button
+
+### Features
+
+- Modern, responsive design with a clean interface
+- Fixed-size chat window where old messages disappear as they reach the top
+- Expandable task list to show additional learning materials
+- Interactive elements with smooth animations
+
+### Running the Application
+
+1. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+2. Run the Flask application:
+   ```
+   python main.py
+   ```
+
+3. Open your browser and navigate to `http://localhost:5000`

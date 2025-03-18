@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAANG Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-bullseye"></i>
+                <h2>Learning Assistant</h2>
+            </div>
+            <div class="sidebar-menu">
+                <a href="#" class="active"><i class="fas fa-comment-dots"></i> Chat</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Progress</a>
+                <a href="#"><i class="fas fa-book"></i> Resources</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="chat-section">
+                <div class="chat-header">
+                    <h2>Chat with Your Learning Assistant</h2>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message assistant-message">
+                        <div class="message-content">
+                            <i class="fas fa-robot message-icon"></i>
+                            <div class="message-text">
+                                Hello! I'm your FAANG Learning Assistant. How can I help you today?
+                            </div>
+                        </div>
+                        <div class="message-time">Now</div>
+                    </div>
+                    <!-- Messages will be added here via JavaScript -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="What would you like to learn about?">
+                    <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+
+            <!-- Task Section -->
+            <div class="task-section">
+                <div class="task-header">
+                    <h2>Today's Study Plan</h2>
+                </div>
+                
+                <!-- Current Task Card -->
+                {% if tasks %}
+                <div class="task-card" id="currentTask">
+                    <h3>{{ tasks[0].title }}</h3>
+                    <div class="task-time">
+                        <i class="far fa-clock"></i> Estimated time: {{ tasks[0].time }}
+                    </div>
+                    <p>{{ tasks[0].description }}</p>
+                    
+                    {% if tasks[0].resources %}
+                    <div class="resources">
+                        <h4>Resources:</h4>
+                        <ul>
+                            {% for resource in tasks[0].resources %}
+                            <li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    
+                    {% if tasks[0].practice %}
+                    <div class="practice">
+                        <h4>Practice Problems:</h4>
+                        <ul>
+                            {% for problem in tasks[0].practice %}
+                            <li><a href="{{ problem.url }}">{{ problem.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+                <!-- View More Tasks Button (if there are more than one task) -->
+                {% if tasks|length > 1 %}
+                <button id="viewMoreTasks" class="view-more-button">View Other Tasks ({{ tasks|length - 1 }})</button>
+                
+                <!-- Hidden Tasks Container -->
+                <div class="hidden-tasks" id="hiddenTasks">
+                    {% for task in tasks[1:] %}
+                    <div class="task-card">
+                        <h3>{{ task.title }}</h3>
+                        <div class="task-time">
+                            <i class="far fa-clock"></i> Estimated time: {{ task.time }}
+                        </div>
+                        <p>{{ task.description }}</p>
+                        
+                        {% if task.resources %}
+                        <div class="resources">
+                            <h4>Resources:</h4>
+                            <ul>
+                                {% for resource in task.resources %}
+                                <li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        
+                        {% if task.practice %}
+                        <div class="practice">
+                            <h4>Practice Problems:</h4>
+                            <ul>
+                                {% for problem in task.practice %}
+                                <li><a href="{{ problem.url }}">{{ problem.text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

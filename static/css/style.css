@@ -1,0 +1,348 @@
+/* Global Variables */
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --text-color: #2d3436;
+    --light-bg: #f5f6fa;
+    --card-bg: #ffffff;
+    --sidebar-width: 20%;
+    --chat-width: 45%;
+    --task-width: 35%;
+    --border-radius: 10px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.sidebar-header i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.sidebar-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menu a {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    background-color: rgba(108, 92, 231, 0.1);
+    color: var(--primary-color);
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Chat Section */
+.chat-section {
+    width: var(--chat-width);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.chat-header, .task-header {
+    margin-bottom: 20px;
+}
+
+.chat-header h2, .task-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 160px);
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 85%;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user-message {
+    align-self: flex-end;
+}
+
+.assistant-message {
+    align-self: flex-start;
+}
+
+.message-content {
+    display: flex;
+    background-color: var(--light-bg);
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+}
+
+.user-message .message-content {
+    background-color: var(--primary-color);
+    color: white;
+    flex-direction: row-reverse;
+}
+
+.message-icon {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.user-message .message-icon {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.assistant-message .message-time {
+    text-align: left;
+}
+
+.chat-input {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.chat-input button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #5a49d6;
+}
+
+/* Task Section */
+.task-section {
+    width: var(--task-width);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.task-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.task-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.task-time {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.task-time i {
+    margin-right: 5px;
+}
+
+.task-card p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.resources h4, .practice h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.resources ul, .practice ul {
+    margin-bottom: 15px;
+}
+
+.resources li a, .practice li a {
+    display: flex;
+    align-items: center;
+}
+
+.resources li a:hover, .practice li a:hover {
+    text-decoration: underline;
+}
+
+.view-more-button {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 15px;
+}
+
+.view-more-button:hover {
+    background-color: rgba(108, 92, 231, 0.1);
+}
+
+.hidden-tasks {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    :root {
+        --sidebar-width: 18%;
+        --chat-width: 47%;
+        --task-width: 35%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+    }
+    
+    .sidebar-header {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+    
+    .sidebar-menu {
+        flex-direction: row;
+    }
+    
+    .sidebar-menu a {
+        padding: 8px 15px;
+    }
+    
+    .main-content {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    .chat-section, .task-section {
+        width: 100%;
+    }
+    
+    .chat-messages {
+        height: 50vh;
+    }
+} 
