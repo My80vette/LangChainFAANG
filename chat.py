@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS for styling - DIRECT APPROACH
+# Custom CSS for styling
 st.markdown("""
 <style>
     /* Main color scheme */
@@ -22,11 +22,7 @@ st.markdown("""
         background: linear-gradient(135deg, #f5f0ff, #e8d9ff);
     }
 
-    /* SIMPLE SCROLLABLE CONTAINER - just like popular sites */
-    div[data-testid="column"]:nth-of-type(2) {
-        height: 100vh;
-    }
-    
+    /* Scrollable container for study cards */
     .scrollable-cards {
         max-height: calc(100vh - 100px);
         overflow-y: auto;
@@ -44,20 +40,22 @@ st.markdown("""
     }
 
     /* View more tasks button */
-    .view-more-tasks {
-        background: white;
-        border-radius: 10px;
-        padding: 15px;
-        margin-top: 10px;
-        border: 2px dashed var(--primary-purple);
+    .task-button button {
+        background: white !important;
+        border-radius: 10px !important;
+        padding: 15px 0 !important;
+        border: 2px solid var(--primary-purple) !important;
         text-align: center;
         cursor: pointer;
         transition: all 0.3s ease;
+        color: #333 !important;
+        font-weight: 600 !important;
+        box-shadow: none !important;
     }
-    
-    .view-more-tasks:hover {
-        background: #f0e6ff;
-        box-shadow: 0 4px 8px rgba(174, 68, 213, 0.2);
+
+    .task-button button:hover {
+        background: #f0e6ff !important;
+        box-shadow: 0 4px 8px rgba(174, 68, 213, 0.2) !important;
     }
 
     /* Link styling */
@@ -66,83 +64,72 @@ st.markdown("""
         text-decoration: none;
     }
 
-    /* Chat container styling */
-    .chat-container {
-        border-radius: 10px;
+    /* Chat messages styling */
+    .chat-area {
         background: white;
+        border-radius: 10px;
         padding: 20px;
-        margin: 10px 0;
-        min-height: 400px;
+        margin-bottom: 15px;
+        height: calc(100vh - 230px);
+        overflow-y: auto;
     }
 
-    /* Custom Input Container */
-    .input-container {
-        display: flex;
-        position: relative;
-        margin-top: 10px;
+    .message {
+        padding: 10px 15px;
+        border-radius: 18px;
+        margin-bottom: 10px;
+        max-width: 75%;
+        word-wrap: break-word;
+    }
+
+    .user-message {
+        background-color: var(--primary-blue);
+        color: white;
+        margin-left: auto;
+        border-bottom-right-radius: 5px;
+    }
+
+    .assistant-message {
+        background-color: #e1e1e1;
+        color: #333;
+        margin-right: auto;
+        border-bottom-left-radius: 5px;
     }
     
-    /* Style for input field */
-    .input-container .stTextInput {
-        flex-grow: 1;
-    }
-    
-    .input-container input {
-        width: 100%;
-        padding-right: 100px; /* Make space for the button */
-        border-radius: 20px;
-        border: 1px solid #ccc;
-        padding: 12px 110px 12px 15px;
-        height: 46px;
-    }
-    
-    /* Style for button inside input */
-    .input-container .stButton {
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        margin: 0;
-    }
-    
-    .input-container .stButton button {
-        border-radius: 20px;
-        padding: 8px 20px;
+    /* Send button styling */
+    .stButton > button {
         background-color: var(--primary-blue);
         color: white;
         border: none;
-        height: 36px;
+        border-radius: 20px;
+        padding: 10px 20px;
     }
     
-    /* Hide the label */
-    .input-container .stTextInput > label {
-        display: none;
-    }
-    
-    /* Additional styles for the button */
-    div[data-testid="stButton"] > button:first-child {
-        background-color: var(--primary-blue);
-        color: white;
-    }
-    
-    /* Custom style for the view more tasks button */
-    .task-button div[data-testid="stButton"] > button:first-child {
-        background-color: white;
-        color: #333;
-        border: 2px solid var(--primary-purple);
-        border-radius: 10px;
-        padding: 15px 0;
-        font-weight: 600;
-        box-shadow: none;
-    }
-    
-    .task-button div[data-testid="stButton"] > button:hover {
-        background-color: #f0e6ff;
-        box-shadow: 0 4px 8px rgba(174, 68, 213, 0.2);
-        color: #333;
-        border: 2px solid var(--primary-purple);
-    }
+    /* Hide default Streamlit elements */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
+
+# Initialize session state for chat history
+if 'chat_history' not in st.session_state:
+    st.session_state.chat_history = []
+
+# Function to handle sending messages
+def send_message():
+    if st.session_state.user_input:
+        user_message = st.session_state.user_input
+        
+        # Add user message to chat history
+        st.session_state.chat_history.append({"role": "user", "content": user_message})
+        
+        # Simulate assistant response (replace with actual logic later)
+        assistant_response = f"Hello! I received your message: '{user_message}'"
+        st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+        
+        # Clear the input field
+        st.session_state.user_input = ""
 
 # Sidebar
 with st.sidebar:
@@ -160,22 +147,27 @@ col1, col2 = st.columns([2, 1], gap="small")
 # Main chat area
 with col1:
     st.header("Chat with Your Learning Assistant")
-
-    # Chat container
-    st.markdown('<div class="chat-container">', unsafe_allow_html=True)
-    chat_placeholder = st.empty()
+    
+    # Chat messages area
+    st.markdown('<div class="chat-area">', unsafe_allow_html=True)
+    for message in st.session_state.chat_history:
+        if message["role"] == "user":
+            st.markdown(f'<div class="message user-message">{message["content"]}</div>', unsafe_allow_html=True)
+        else:
+            st.markdown(f'<div class="message assistant-message">{message["content"]}</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
-
-    # Custom input area with button inside
-    st.markdown('<div class="input-container">', unsafe_allow_html=True)
-    user_input = st.text_input("", placeholder="Ask me anything...", key="user_input")
-    send_button = st.button("Send")
-    st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Input and send button in a row
+    cols = st.columns([4, 1])
+    with cols[0]:
+        st.text_input("", placeholder="Ask me anything...", key="user_input", on_change=send_message)
+    with cols[1]:
+        st.button("Send", on_click=send_message)
 
 # Study plan cards column
 with col2:
     st.header("Today's Study Plan")
-    
+
     # Example study cards
     study_cards = [
         {
@@ -194,57 +186,59 @@ with col2:
         {
             "title": "Linked Lists",
             "time": "60 minutes",
-            "description": "Understand the fundamentals of linked lists.",
-            "resources": [],
-            "practice": []
+            "description": "Understand the fundamentals of linked lists and their operations.",
+            "resources": [
+                {"text": "📄 Linked List Basics", "url": "https://example.com/linked-lists"},
+                {"text": "🎥 Visualizing Linked List Operations", "url": "https://example.com/linked-list-video"}
+            ],
+            "practice": [
+                {"text": "🧩 LeetCode #206: Reverse Linked List", "url": "https://leetcode.com/problems/reverse-linked-list"},
+                {"text": "🧩 LeetCode #21: Merge Two Sorted Lists", "url": "https://leetcode.com/problems/merge-two-sorted-lists"}
+            ]
         },
         {
-            "title": "Trees",
+            "title": "Binary Trees",
             "time": "75 minutes",
-            "description": "Explore different types of tree data structures.",
+            "description": "Explore binary trees and common traversal methods.",
             "resources": [],
             "practice": []
         },
         {
-            "title": "Graphs",
+            "title": "Graph Algorithms",
             "time": "90 minutes",
-            "description": "Learn about graph representations and algorithms.",
+            "description": "Learn about BFS, DFS, and Dijkstra's algorithm.",
             "resources": [],
             "practice": []
         },
         {
             "title": "Dynamic Programming",
             "time": "120 minutes",
-            "description": "Master the art of dynamic programming.",
+            "description": "Master memoization and bottom-up approaches.",
             "resources": [],
             "practice": []
         },
         {
-            "title": "Another Topic",
+            "title": "System Design",
             "time": "60 minutes",
-            "description": "Just adding more content.",
+            "description": "Learn how to design scalable systems.",
             "resources": [],
             "practice": []
         },
         {
-            "title": "Yet Another Topic",
+            "title": "Behavioral Interview Prep",
             "time": "60 minutes",
-            "description": "To ensure scrolling.",
+            "description": "Practice STAR method responses.",
             "resources": [],
             "practice": []
         },
     ]
 
-    # Simple scrollable container - direct approach
+    # Create scrollable container
     st.markdown('<div class="scrollable-cards">', unsafe_allow_html=True)
 
     # Add session state to track if cards are expanded or collapsed
     if 'show_all_cards' not in st.session_state:
         st.session_state.show_all_cards = False
-
-    # Define a function to toggle card visibility
-    def toggle_cards():
-        st.session_state.show_all_cards = not st.session_state.show_all_cards
 
     # Display the first card regardless
     if study_cards:
@@ -269,11 +263,11 @@ with col2:
     remaining_cards = len(study_cards) - 1
     if remaining_cards > 0:
         view_more_text = f"View {remaining_cards} Other Tasks" if not st.session_state.show_all_cards else "Hide Other Tasks"
-        
+
         # Add a class to target this button specifically
         st.markdown('<div class="task-button">', unsafe_allow_html=True)
-        if st.button(f"📚 {view_more_text} 📚", key="view_more_button", type="primary", use_container_width=True):
-            toggle_cards()
+        if st.button(f"📚 {view_more_text} 📚", key="view_more_button", use_container_width=True):
+            st.session_state.show_all_cards = not st.session_state.show_all_cards
             st.experimental_rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -295,6 +289,6 @@ with col2:
                     </ul>
                 </div>
                 """, unsafe_allow_html=True)
-    
+
     # Close container
     st.markdown('</div>', unsafe_allow_html=True)
