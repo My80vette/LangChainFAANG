@@ -88,4 +88,33 @@ function toggleTasks() {
         hiddenTasks.style.display = 'block';
         viewMoreTasks.textContent = 'Hide Tasks';
     }
+}
+
+// Toggle resources visibility
+function toggleResources(button) {
+    const resourcesList = button.nextElementSibling;
+    if (resourcesList.style.display === 'block') {
+        resourcesList.style.display = 'none';
+        const resourceCount = resourcesList.querySelectorAll('li').length;
+        button.textContent = `Show ${resourceCount} more resources`;
+        button.classList.remove('active');
+    } else {
+        resourcesList.style.display = 'block';
+        button.textContent = 'Hide resources';
+        button.classList.add('active');
+    }
+}
+
+// Toggle practice problems visibility
+function togglePractice(button) {
+    const practiceList = button.nextElementSibling;
+    if (practiceList.style.display === 'block') {
+        practiceList.style.display = 'none';
+        button.textContent = 'Show Practice Problems';
+        button.classList.remove('active');
+    } else {
+        practiceList.style.display = 'block';
+        button.textContent = 'Hide Practice Problems';
+        button.classList.add('active');
+    }
 } 

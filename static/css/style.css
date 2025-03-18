@@ -293,6 +293,34 @@ li {
     background-color: rgba(108, 92, 231, 0.1);
 }
 
+.resources-list-hidden, .practice-list.hidden {
+    display: none;
+}
+
+.expand-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.expand-button:hover {
+    background-color: #e8e8e8;
+}
+
+.expand-button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 .hidden-tasks {
     display: none;
 }

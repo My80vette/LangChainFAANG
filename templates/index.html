@@ -34,7 +34,7 @@
                         <div class="message-content">
                             <i class="fas fa-robot message-icon"></i>
                             <div class="message-text">
-                                Hello! I'm your Leetcode Learning Assistant. Are we ready to dive in?
+                                Okay, here is your study plan for the day!
                             </div>
                         </div>
                         <div class="message-time">Now</div>
@@ -65,18 +65,27 @@
                     {% if tasks[0].resources %}
                     <div class="resources">
                         <h4>Resources:</h4>
-                        <ul>
-                            {% for resource in tasks[0].resources %}
+                        <ul class="resources-list">
+                            {% if tasks[0].resources|length > 0 %}
+                            <li><a href="{{ tasks[0].resources[0].url }}">{{ tasks[0].resources[0].text }}</a></li>
+                            {% endif %}
+                        </ul>
+                        {% if tasks[0].resources|length > 1 %}
+                        <button class="expand-button" onclick="toggleResources(this)">Show {{ tasks[0].resources|length - 1 }} more resources</button>
+                        <ul class="resources-list-hidden">
+                            {% for resource in tasks[0].resources[1:] %}
                             <li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
                             {% endfor %}
                         </ul>
+                        {% endif %}
                     </div>
                     {% endif %}
                     
                     {% if tasks[0].practice %}
                     <div class="practice">
                         <h4>Practice Problems:</h4>
-                        <ul>
+                        <button class="expand-button" onclick="togglePractice(this)">Show Practice Problems</button>
+                        <ul class="practice-list hidden">
                             {% for problem in tasks[0].practice %}
                             <li><a href="{{ problem.url }}">{{ problem.text }}</a></li>
                             {% endfor %}
@@ -103,18 +112,27 @@
                         {% if task.resources %}
                         <div class="resources">
                             <h4>Resources:</h4>
-                            <ul>
-                                {% for resource in task.resources %}
+                            <ul class="resources-list">
+                                {% if task.resources|length > 0 %}
+                                <li><a href="{{ task.resources[0].url }}">{{ task.resources[0].text }}</a></li>
+                                {% endif %}
+                            </ul>
+                            {% if task.resources|length > 1 %}
+                            <button class="expand-button" onclick="toggleResources(this)">Show {{ task.resources|length - 1 }} more resources</button>
+                            <ul class="resources-list-hidden">
+                                {% for resource in task.resources[1:] %}
                                 <li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
                                 {% endfor %}
                             </ul>
+                            {% endif %}
                         </div>
                         {% endif %}
                         
                         {% if task.practice %}
                         <div class="practice">
                             <h4>Practice Problems:</h4>
-                            <ul>
+                            <button class="expand-button" onclick="togglePractice(this)">Show Practice Problems</button>
+                            <ul class="practice-list hidden">
                                 {% for problem in task.practice %}
                                 <li><a href="{{ problem.url }}">{{ problem.text }}</a></li>
                                 {% endfor %}
