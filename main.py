@@ -43,7 +43,7 @@ study_tasks = [
 
 # Sample chat responses (replace with your actual chatbot logic)
 def get_bot_response(message):
-    return f"Hello! I'm your FAANG Learning Assistant. How can I help you today?"
+    return f"Understood, Generating study plan!?"
 
 @app.route('/')
 def index():

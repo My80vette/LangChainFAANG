@@ -52,8 +52,10 @@ The agent understands your daily study availability through natural language inp
 
 This section will be updated regularly to showcase the progress of the "Daily Grind" agent.
 
+* **[3/18/24]**: UI setup complete, happy with the basic layout and look, we have a good way to view tasks, and contanerization looks great, so I feel confident in moving forward to the deeper AI integration! Lots of fun new features im thinking of adding!
 * **[3/17/24]**: Initial project setup complete. GitHub repository created. Basic file structure established (`agent.py`, `planner.py`, etc.). Langchain library installed.
 * **[3/17/24]**: High-level system design flushed out and documented. Understanding of core interactions established.
+
 
 
 ## Planned Features (Future Enhancements)
@@ -64,6 +66,7 @@ This section will be updated regularly to showcase the progress of the "Daily Gr
 * More advanced knowledge check generation and evaluation.
 * Potential for user-defined goals beyond the default curriculum.
 * Enhanced UI with progress visualizations.
+* Data Visualization technique to show progress for portfolio.
 
 ## UI Updates
 
