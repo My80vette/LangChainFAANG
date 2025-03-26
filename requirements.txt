@@ -3,3 +3,6 @@ openai
 langgraph
 python-dotenv
 flask
+uuid
+datetime
+pymongo
