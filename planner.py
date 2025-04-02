@@ -2,6 +2,7 @@ import uuid
 import datetime
 import openai
 import langchain
+import datetime
 from pymongo import MongoClient
 # this file is responsible for containing all of the task card creation functions that the agent will need to use
 
@@ -120,37 +121,41 @@ class Planner:
         self.task_cards_collection = self.db.task_cards
 
     def create_task_card(self, topic, description, available_time):
-        # Create a unique ID for the task card
-        id = str(uuid.uuid4())
-        
-        # Create a task card
-        task_card = TaskCard(id, topic, description)
-        
-        # Fetch problems and resources
-        problems = self.fetch_problems_for_topic(topic, id, None)  # Get all difficulties
-        resources = self.fetch_resources_for_topic(topic, id, None)
-        
-        # Add resources and problems based on available time
-        # This is a simple allocation strategy - in the real implementation, 
-        # you would use the LLM to make more intelligent decisions
-        
-        remaining_time = available_time
-        
-        # Add resources first (prioritize learning before practice)
-        for resource in resources:
-            if remaining_time >= resource.time_estimate:
-                task_card.add_resource(resource)
-                remaining_time -= resource.time_estimate
-        
-        # Then add problems, starting with easy ones
-        sorted_problems = sorted(problems, key=lambda p: {"easy": 1, "medium": 2, "hard": 3}[p.difficulty])
-        
-        for problem in sorted_problems:
-            if remaining_time >= problem.time_estimate:
-                task_card.add_problem(problem)
-                remaining_time -= problem.time_estimate
-        
-        return task_card
+        try:
+            # Create a unique ID for the task card
+            id = str(uuid.uuid4())
+            
+            # Create a task card
+            task_card = TaskCard(id, topic, description)
+            
+            # Fetch problems and resources
+            problems = self.fetch_problems_for_topic(topic, id, None)
+            resources = self.fetch_resources_for_topic(topic, id, None)
+            
+            if not problems and not resources:
+                print(f"Warning: No problems or resources found for topic '{topic}'")
+            
+            # Add resources and problems based on available time
+            remaining_time = available_time
+            
+            # Add resources first
+            for resource in resources:
+                if remaining_time >= resource.time_estimate:
+                    task_card.add_resource(resource)
+                    remaining_time -= resource.time_estimate
+            
+            # Then add problems, starting with easy ones
+            sorted_problems = sorted(problems, key=lambda p: {"easy": 1, "medium": 2, "hard": 3}[p.difficulty])
+            
+            for problem in sorted_problems:
+                if remaining_time >= problem.time_estimate:
+                    task_card.add_problem(problem)
+                    remaining_time -= problem.time_estimate
+            
+            return task_card
+        except Exception as e:
+            print(f"Error creating task card: {e}")
+            return None
 
     def get_available_topics(self):
         # Query the topics collection and retrieve just the names
@@ -240,7 +245,7 @@ class Planner:
         else:
             return []  # No resources found for this topic
 
-    def reccomend_next_steps(self, curent_card, available_time):
+    def reccommend_next_steps(self, curent_card, available_time):
         #We need to make an API call here to plan which tasks on the card we are 'assigned' for the session
         pass
     
@@ -259,6 +264,40 @@ class Planner:
         if not card_dict:
             return None
         
+        # Create a new TaskCard object
+        task_card = TaskCard(
+            card_dict["id"],
+            card_dict["topic"],
+            card_dict["description"]
+        )
+        
+        # Reconstruct resources
+        for resource_dict in card_dict["resources"]:
+            resource = Resource(resource_dict["title"], resource_dict["url"])
+            resource.id = resource_dict["id"]
+            resource.resource_type = resource_dict["resource_type"]
+            resource.time_estimate = resource_dict["time_estimate"]
+            resource.completed = resource_dict["completed"]
+            resource.time_completed = resource_dict["time_completed"]
+            task_card.add_resource(resource)
+        
+        # Reconstruct problems
+        for problem_dict in card_dict["problems"]:
+            problem = Problem(problem_dict["title"], problem_dict["url"])
+            problem.id = problem_dict["id"]
+            problem.difficulty = problem_dict["difficulty"]
+            problem.time_estimate = problem_dict["time_estimate"]
+            problem.completed = problem_dict["completed"]
+            problem.time_completed = problem_dict["time_completed"]
+            task_card.add_problem(problem)
+        
+        # Set other properties
+        task_card.created_at = card_dict["created_at"]
+        task_card.updated_at = card_dict["updated_at"]
+        task_card.status = card_dict["status"]
+        
+        return task_card
+        
     def mark_card_complete(self, task_card):
         # Check if all resources and problems are completed
         all_resources_complete = all(resource.completed for resource in task_card.resources)
@@ -269,13 +308,14 @@ class Planner:
         
         # Update the card's status and timestamp
         task_card.status = 'complete'
-        task_card.updated_at = datetime.datetime.now()
+        task_card.updated_at = datetime.now()  # Make sure you're using the correct datetime import
         
         try:
-            # Update the card in the database
+            # Convert to dictionary and update
+            card_dict = task_card.to_dict()
             result = self.task_cards_collection.update_one(
                 {"id": task_card.id},
-                {"$set": task_card.to_dict()}
+                {"$set": card_dict}
             )
             return result.modified_count > 0
         except Exception as e:
