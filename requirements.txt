@@ -1,7 +1,9 @@
-langchain[openai]
-openai
+langchain[anthropic]
+langchain_anthropic
+anthropic
 langgraph
 python-dotenv
+dotenv
 flask
 uuid
 datetime

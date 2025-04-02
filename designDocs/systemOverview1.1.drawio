@@ -1,0 +1,291 @@
+<mxfile host="65bd71144e">
+    <diagram id="MYFiXkVj-ofIam6HPAuR" name="Page-1">
+        <mxGraphModel dx="547" dy="2460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="391" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="935" y="-222.5" width="415" height="222.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="-197.5" width="365" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="shape=datastore;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="-1338.5" width="380" height="798.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="topics" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1017.5" y="-1038.25" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="_ID&lt;div&gt;name&lt;/div&gt;&lt;div&gt;description&lt;/div&gt;" style="align=left;strokeColor=#82b366;fillColor=#d5e8d4;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="17" vertex="1">
+                    <mxGeometry y="50" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="problems" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1017.5" y="-908.25" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="_ID&lt;div&gt;Leetcode_ID&lt;/div&gt;&lt;div&gt;Title&lt;br&gt;Difficulty&lt;br&gt;Topic_ID&lt;/div&gt;&lt;div&gt;Estimated_Time&lt;br&gt;URL&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="19" vertex="1">
+                    <mxGeometry y="50" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="user_progress" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1197.5" y="-1038.25" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="_UID&lt;br&gt;topic_ID&lt;br&gt;completed_Problems&lt;br&gt;Topic_checkpoint_score" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="23" vertex="1">
+                    <mxGeometry y="50" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;MongoDB&lt;br&gt;&lt;br&gt;LeetcodePrepPro&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="1080" y="-1164.5" width="220" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="-197.5" width="95" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="Chat&lt;div&gt;Progress&lt;br&gt;Resources&lt;br&gt;Settings&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="977.5" y="-127.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
+                    <mxGeometry x="1055" y="-197.5" width="150" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="ChatBot Input" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1055" y="-57.5" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;" parent="1" vertex="1">
+                    <mxGeometry x="1055" y="-87.5" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;" parent="1" vertex="1">
+                    <mxGeometry x="1145" y="-107.5" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;" parent="1" vertex="1">
+                    <mxGeometry x="1055" y="-137.5" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;" parent="1" vertex="1">
+                    <mxGeometry x="1145" y="-167.5" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;" parent="1" vertex="1">
+                    <mxGeometry x="1055" y="-197.5" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="endArrow=none;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="36" target="36" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1055" y="-47.5" as="sourcePoint"/>
+                        <mxPoint x="1105" y="-97.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1205" y="-192.5" width="120" height="155" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Topic" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1235" y="-192.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="TotalTimeEstimate" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1235" y="-172.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Description" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1235" y="-157.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="Resources&lt;div&gt;1&lt;/div&gt;&lt;div&gt;2&lt;/div&gt;&lt;div&gt;3&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1205" y="-117.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Practice Problems" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1215" y="-77.5" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="384" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;" parent="1" source="152" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1000" y="-730" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="152" value="planner.py" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="4.79" y="-730" width="363.21" height="500" as="geometry">
+                        <mxRectangle x="70" y="-550" width="100" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="154" value="&lt;div&gt;&lt;b&gt;class Resource:&lt;/b&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;__init__(title, url)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;mark_completion()&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;to_dict()&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;b&gt;class Problem:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;__init__(title, url)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;mark_completion()&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;to_dict()&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;b&gt;class TaskCard:&lt;/b&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;__init__(id, topic, description)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;add_resource(resource)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;add_problem(problem)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;r&lt;span style=&quot;background-color: transparent;&quot;&gt;emove_resource(resource)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;remove_problem(problem)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;get_completion_percentage()&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;mark_resource_completed(resource)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;mark_problem_completed(problem)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;update_status(status)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;to_dict()&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;b&gt;class Planner:&lt;/b&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;__init__(mongo_uri=&quot;mongodb://localhost:27017/&quot;)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;create_task_card(topic, description, available_time)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;get_available_topics()&lt;br&gt;    &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;f&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;etch_problems_for_topic(topic, id=None, difficulty=None)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;fetch_resources_for_topic(topic, id, difficulty)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;reccomend_next_steps(curent_card, available_time)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;save_task_card(TaskCard)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;mark_card_complete(TaskCard)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;get_task_card(card_id)&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="152" vertex="1">
+                    <mxGeometry y="30" width="363.21" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="157" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="154" target="161" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="330" y="-360" as="sourcePoint"/>
+                        <mxPoint x="480" y="-485" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="158" value="include to use functions" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="157" vertex="1" connectable="0">
+                    <mxGeometry x="0.0917" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-13" y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="160" value="agent.py" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="-570" width="290" height="180" as="geometry">
+                        <mxRectangle x="510" y="-570" width="90" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="161" value="Claude Connection&lt;br&gt;createTask(Chatbot Agent)&lt;br&gt;pullTopics(database)&lt;br&gt;updateProgress(database)&lt;br&gt;gatherResources(Resource Agent)&lt;br&gt;gatherQuestions(Resource Agent)&lt;br&gt;generateKnowledgeCheck(Chatbot Agent)&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="160" vertex="1">
+                    <mxGeometry y="30" width="290" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="178" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="160" target="312" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="655" y="-710" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="179" value="Calls To Claude" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="178" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0021" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="183" value="chat" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1192.5" y="-898.25" width="170" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="184" value="sessionTracking&lt;div&gt;chatMemory &lt;br&gt;(possibly in a memory buffer)&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="183" vertex="1">
+                    <mxGeometry y="50" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value="progress_tracker.py" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="981.16" y="-520" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="186" value="process_progress(process_object)&lt;div&gt;&lt;div&gt;update_progress(database) [called by process_progress]&lt;/div&gt;&lt;/div&gt;&lt;div&gt;(visualization options to be added later)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="185" vertex="1">
+                    <mxGeometry y="30" width="440" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="189" style="edgeStyle=none;html=1;exitX=0;exitY=0.395;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.996;entryY=0.334;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="186" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="991.16" y="-435" as="sourcePoint"/>
+                        <mxPoint x="800.0000000000001" y="-469.89999999999964" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="209" value="Include to use functions" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="189" vertex="1" connectable="0">
+                    <mxGeometry x="0.0492" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="192" value="config.py" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="-167.5" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="193" value="Endpoints and Keys" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="192" vertex="1">
+                    <mxGeometry y="30" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="196" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.81;entryY=1.02;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="192" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="509.9000000000001" y="-388.90999999999974" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="208" value="include to use functions" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="196" vertex="1" connectable="0">
+                    <mxGeometry x="0.0236" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="201" style="edgeStyle=none;html=1;exitX=1.006;exitY=0.345;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.024;entryY=0.575;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="198" target="33" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1285.21" y="-137.5" as="sourcePoint"/>
+                        <mxPoint x="950" y="-114" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="197" value="main.py" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="-167.5" width="210" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="198" value="render homepage&lt;div&gt;handle routing&lt;/div&gt;&lt;div&gt;handle session state tracking&lt;/div&gt;&lt;div&gt;handle chatbot logic to trigger agents&lt;/div&gt;&lt;div&gt;Output Knowledge Checks&lt;/div&gt;&lt;div&gt;Output Chat Responses&lt;/div&gt;&lt;div&gt;Output Task Cards&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="197" vertex="1">
+                    <mxGeometry y="30" width="210" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="205" value="" style="endArrow=classic;html=1;exitX=1;exitY=1.001;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.562;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="161" target="197" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="797.56" y="-389.9999999999999" as="sourcePoint"/>
+                        <mxPoint x="890" y="-360.6" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="800" y="-170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="207" value="include to use functions" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="205" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0312" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="329" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="313" target="291" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="590" y="-909.9999999999998" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="291" value="Problem Server" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="-848.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="295" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="292" target="294" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="296" value="Gather Web Resources" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="295" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0536" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="292" value="Text Tutorial Server" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="-1023.75" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="294" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.wireless_modem;" parent="1" vertex="1">
+                    <mxGeometry x="25" y="-1025.75" width="80" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="300" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="291" target="308" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="-897.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="311" value="Codeforces/Hackerrank/AtCoder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="300" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1565" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="305" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="303" target="304" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="310" value="Gather Video Resources" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="305" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1565" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="303" value="Video Tutorial Server" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="-937" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="304" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.youtube_2;fillColor=#FF2626;gradientColor=#B5171F" parent="1" vertex="1">
+                    <mxGeometry x="41.79999999999995" y="-923.3" width="46.400000000000006" height="32.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="308" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_globe.svg;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="-843.5" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="312" value="Claude 3.7 Agent Management" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="-980" width="210" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="440" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="312" source="313" target="314">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="313" value="Resource&amp;nbsp;&lt;div&gt;Agent&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="312" vertex="1">
+                    <mxGeometry x="45" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="441" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="312" source="314">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="104.90476190476193" y="100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="314" value="Chatbot&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" parent="312" vertex="1">
+                    <mxGeometry x="45" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="316" value="Resources" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1192.5" y="-778.25" width="170" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="317" value="Title&lt;div&gt;URL&lt;br&gt;topic_ID&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="316" vertex="1">
+                    <mxGeometry y="50" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="327" style="html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="313" target="292" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="328" style="edgeStyle=none;html=1;exitX=0.042;exitY=0.475;exitDx=0;exitDy=0;startArrow=classic;startFill=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="313" target="303" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="-908" as="targetPoint"/>
+                        <mxPoint x="595" y="-911.4999999999998" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="383" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.003;entryY=0.635;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="314" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="385" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=-0.001;entryY=0.796;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="160" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="438" value="TaskCard" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1012.5" y="-731.63" width="170" height="137.13" as="geometry"/>
+                </mxCell>
+                <mxCell id="439" value="ID&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;Description&lt;br&gt;&lt;/font&gt;&lt;div&gt;Resources&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Problems&lt;/div&gt;&lt;div&gt;Progress&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="438" vertex="1">
+                    <mxGeometry y="50" width="170" height="87.13" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

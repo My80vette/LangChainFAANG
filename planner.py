@@ -102,13 +102,12 @@ class TaskCard:
             'topic': self.topic,
             'description': self.description,
             'resources': [resource.to_dict() for resource in self.resources],
-            'problem': [problem.to_dict() for problem in self.problem],
+            'problems': [problem.to_dict() for problem in self.problems],
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'status': self.status
         }
     
-
 class Planner:
     def __init__(self, mongo_uri="mongodb://localhost:27017/"):
         # establish MongoDB connection
@@ -194,11 +193,11 @@ class Planner:
             # We'll leave time_estimate to be determined by the agent later
             # For now, assign a rough estimate based on difficulty
             if problem_difficulty == "easy":
-                problem.time_estimate = 20
+                problem.time_estimate = 25
             elif problem_difficulty == "medium":
-                problem.time_estimate = 30
+                problem.time_estimate = 40
             else:  # hard
-                problem.time_estimate = 45
+                problem.time_estimate = 55
             
             # Filter by difficulty if specified
             if difficulty and problem.difficulty != difficulty:
@@ -214,12 +213,12 @@ class Planner:
         
         # Create some mock resources
         mock_resources = {
-            "Arrays": [
+            "Array / String": [
                 {"title": "Introduction to Arrays", "url": "https://example.com/arrays-intro", "resource_type": "article", "time_estimate": 15},
                 {"title": "Array Manipulation Techniques", "url": "https://example.com/array-techniques", "resource_type": "article", "time_estimate": 20},
                 {"title": "Two Pointers Technique", "url": "https://example.com/two-pointers", "resource_type": "video", "time_estimate": 25}
             ],
-            "Linked Lists": [
+            "Two Pointers": [
                 {"title": "Linked List Basics", "url": "https://example.com/linkedlist-basics", "resource_type": "article", "time_estimate": 15},
                 {"title": "Reversing a Linked List", "url": "https://example.com/reverse-linkedlist", "resource_type": "video", "time_estimate": 20}
             ]
@@ -244,3 +243,41 @@ class Planner:
     def reccomend_next_steps(self, curent_card, available_time):
         #We need to make an API call here to plan which tasks on the card we are 'assigned' for the session
         pass
+    
+    def save_task_card(self, TaskCard):
+        # save the TaskCard object 'task_card' in the DB (the card should be complete upon instertion)
+        try:
+            card_dict = TaskCard.to_dict()
+            result = self.task_cards_collection.insert_one(card_dict)
+            return result.acknowledged
+        except Exception as FuckSomethingBroke:
+            print(f"Error Saving Task Card:  {FuckSomethingBroke}")
+        pass
+
+    def get_task_card(self, card_id):
+        card_dict = self.task_cards_collection.find_one({"id": card_id})
+        if not card_dict:
+            return None
+        
+    def mark_card_complete(self, task_card):
+        # Check if all resources and problems are completed
+        all_resources_complete = all(resource.completed for resource in task_card.resources)
+        all_problems_complete = all(problem.completed for problem in task_card.problems)
+        
+        if not (all_resources_complete and all_problems_complete):
+            return False
+        
+        # Update the card's status and timestamp
+        task_card.status = 'complete'
+        task_card.updated_at = datetime.datetime.now()
+        
+        try:
+            # Update the card in the database
+            result = self.task_cards_collection.update_one(
+                {"id": task_card.id},
+                {"$set": task_card.to_dict()}
+            )
+            return result.modified_count > 0
+        except Exception as e:
+            print(f"Error updating task card status: {e}")
+            return False
