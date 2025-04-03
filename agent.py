@@ -72,14 +72,11 @@ class DailyGrindAgent:
         # For MVP, we'll simulate finding resources rather than actually searching the web
         # In a full implementation, you'd use a search API here
         
-        resources = [
-            Resource(f"Understanding {topic} - Tutorial", f"https://example.com/{topic.lower().replace(' ', '-')}-tutorial"),
-            Resource(f"{topic} Interview Questions", f"https://example.com/{topic.lower().replace(' ', '-')}-interview-questions")
-        ]
+        resources = []
         
         # Add these resources to the planner
-        for resource in resources:
-            self.planner.add_resource(resource)
+        #for resource in resources:
+            #self.planner.add_resource(resource)
         
         return f"I've added some resources about {topic} to your study plan. You can find them in the resources section."
     
